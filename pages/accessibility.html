@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barrierefreiheit | Orbital Interactive</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="main-banner">
+    <a href="../shop.html" class="logo-link" aria-label="Zurück zur Startseite">
+        <img src="../assets/OrbitalInteractive_logo.png" alt="Orbital Interactive Logo" class="header-logo">
+    </a>
+
+    <nav class="product-nav">
+        <a href="../pages/about-us.html" class="nav-btn-link">Über uns</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">PRODUKTE ▾</button>
+            <div class="dropdown-content">
+                <a href="../shop.html#" onclick="switchProduct('cosmic')">Cosmic Swing</a>
+                <a href="../shop.html#" onclick="switchProduct('galactic')">Galactic Beats</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div id="accent-strip" class="accent-cosmic"></div>
+
+<main class="shop-container">
+    <section class="product-hero" style="display: block;">
+        <h1>Erklärung zur Barrierefreiheit</h1>
+        <p>Orbital Interactive ist bemüht, seine Website im Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2016/2102 des Europäischen Parlaments barrierefrei zugänglich zu machen.</p>
+
+        <h2>Stand der Vereinbarkeit</h2>
+        <p>Diese Website ist mit der <strong>WCAG 2.2 AA konform</strong>. Wir haben folgende Maßnahmen umgesetzt:</p>
+        <ul>
+            <li><strong>Semantisches HTML:</strong> Klare Strukturierung für Screenreader.</li>
+            <li><strong>Tastaturnavigation:</strong> Alle interaktiven Elemente sind per Tabulator erreichbar.</li>
+            <li><strong>Kontrastverhältnisse:</strong> Texte sind für eine gute Lesbarkeit optimiert.</li>
+            <li><strong>Skalierbarkeit:</strong> Die Seite unterstützt das Zoomen im Browser ohne Funktionsverlust.</li>
+        </ul>
+
+        <h2>Feedback und Kontakt</h2>
+        <p>Wenn Ihnen Barrieren auf unserer Website auffallen, kontaktieren Sie uns bitte unter: <br>
+            Email: support@orbital-interactive.com</p>
+    </section>
+</main>
+
+<footer class="legal-footer">
+    <div class="footer-content">
+        <nav class="footer-nav">
+            <ul class="footer-links">
+                <li><a href="legal-notice.html">Impressum</a></li>
+                <li><a href="privacy.html">Datenschutzerklärung</a></li>
+                <li><a href="accessibility.html">Barrierefreiheit</a></li>
+                <li><a href="license.html">Lizenz</a></li>
+            </ul>
+        </nav>
+        <p class="copyright">&copy; 2026 Orbital Interactive</p>
+    </div>
+</footer>
+
+<div id="custom-cursor"></div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
