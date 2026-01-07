@@ -409,12 +409,50 @@ body {
 }
 
 /*Responsive Anpassungen*/
-@media (max-width: 768px) {
-    .product-hero {
-        padding: 20px;
-        gap: 30px;
+@media (max-width: 1080px) {
+    :root {
+        --nav-width: auto;
     }
-    .product-info h1 {
-        font-size: 3rem;
+
+    .main-banner {
+        padding: 0 10px;
+        height: auto;
+        min-height: var(--banner-height);
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .logo-link {
+        padding: 10px 0;
+    }
+
+    .product-nav {
+        width: 100%;
+        justify-content: end;
+        border-top: 1px solid #1a1a1a;
+    }
+
+    .nav-btn-link {
+        font-size: 0.8rem;
+        padding: 15px 10px;
+        flex: 0.3;
+        text-align: center;
+    }
+    .dropbtn {
+        font-size: 0.8rem;
+        padding: 15px 10px;
+        flex: 1;
+        text-align: center;
+    }
+
+    .header-logo {
+        height: 40px;
+    }
+
+    .dropdown-content {
+        position: fixed;
+        top: auto;
+        left: 0;
+        width: 100vw;
     }
 }
