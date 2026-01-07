@@ -13,7 +13,7 @@ const products = {
         title: "Galactic Beats",
         tagline: "Bassgewitter im Orbit.",
         desc: "Der EDM-Ableger von Cosmic Swing. Härtere Beats, neonfarbene Visuals und ein exklusiver Soundtrack von interstellaren DJs.",
-        price: "24,99 €",
+        price: "19,99 €",
         image: "assets/GalacticBeats_cover.png",
         accent: "accent-galactic",
         titleColor: "#39ff14"
@@ -39,6 +39,25 @@ function switchProduct(key) {
     document.getElementById('accent-strip').className = p.accent;
     document.documentElement.style.setProperty('--dynamic-title-color', p.titleColor);
 }
+
+function checkUrlHash() {
+    const hash = window.location.hash;
+
+    if (hash === '#galactic') {
+        switchProduct('galactic');
+    } else if (hash === '#cosmic') {
+        switchProduct('cosmic');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    document.documentElement.style.setProperty('--dynamic-title-color', products.cosmic.titleColor);
+
+    checkUrlHash();
+});
+
+window.addEventListener('hashchange', checkUrlHash);
 
 /*3. Lightbox-Funktionen*/
 function openLightbox() {
@@ -76,3 +95,22 @@ document.addEventListener('DOMContentLoaded', () => {
     // Setzt die initiale Farbe für den ersten Titel
     document.documentElement.style.setProperty('--dynamic-title-color', products.cosmic.titleColor);
 });
+
+//Cookie Popup Logik
+function toggleCookiePopup() {
+    const popup = document.getElementById('cookie-popup');
+    if (popup.style.display === 'block') {
+        popup.style.display = 'none';
+    } else {
+        popup.style.display = 'block';
+    }
+}
+
+function closeCookiePopup() {
+    document.getElementById('cookie-popup').style.display = 'none';
+}
+
+function acceptCookies() {
+    alert("Cookies wurden akzeptiert!\n\n(dieser Vorgang ist nur gemocked,\nes wurden nicht tatsächlich Cookies akzeptiert)");
+    closeCookiePopup();
+}

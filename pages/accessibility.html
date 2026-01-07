@@ -17,12 +17,13 @@
 
     <nav class="product-nav">
         <a href="../pages/about-us.html" class="nav-btn-link">Über uns</a>
+        <a href="../pages/contact.html" class="nav-btn-link">Kontakt</a>
 
         <div class="dropdown">
             <button class="dropbtn">PRODUKTE ▾</button>
             <div class="dropdown-content">
-                <a href="../shop.html#" onclick="switchProduct('cosmic')">Cosmic Swing</a>
-                <a href="../shop.html#" onclick="switchProduct('galactic')">Galactic Beats</a>
+                <a href="../shop.html#cosmic">Cosmic Swing</a>
+                <a href="../shop.html#galactic">Galactic Beats</a>
             </div>
         </div>
     </nav>
@@ -65,6 +66,20 @@
 </footer>
 
 <div id="custom-cursor"></div>
+
+<div id="cookie-wrapper">
+    <div id="cookie-popup" class="cookie-card">
+        <h3>Cookie-Einstellungen</h3>
+        <p>Wir nutzen Cookies, um Ihr Erlebnis zu verbessern. Akzeptieren Sie die Nutzung?</p>
+        <div class="cookie-buttons">
+            <button onclick="acceptCookies()" class="cookie-btn-accept">Alle akzeptieren</button>
+            <button onclick="closeCookiePopup()" class="cookie-btn-minimal">Nur Notwendige</button>
+        </div>
+    </div>
+    <button id="cookie-icon-btn" onclick="toggleCookiePopup()" aria-label="Cookie Einstellungen">
+        <span class="gray-emoji">🍪</span>
+    </button>
+</div>
 
 <script src="../js/main.js"></script>
 </body>

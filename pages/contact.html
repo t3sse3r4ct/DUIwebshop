@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum | Orbital Interactive</title>
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.png">
+    <title>Kontakt | Orbital Interactive</title>
     <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        .contact-form { display: flex; flex-direction: column; gap: 15px; max-width: 500px; margin-top: 30px; }
+        .contact-form input, .contact-form textarea {
+            background: #1a1e26; border: 1px solid #333; color: white; padding: 12px; border-radius: 6px; font-family: inherit;
+        }
+        .contact-form input:focus { border-color: var(--cosmic-pink); outline: none; }
+    </style>
 </head>
 <body>
 
 <header class="main-banner">
-    <a href="../shop.html" class="logo-link" aria-label="Zurück zur Startseite">
+    <a href="../shop.html" class="logo-link">
         <img src="../assets/OrbitalInteractive_logo.png" alt="Orbital Interactive Logo" class="header-logo">
     </a>
-
     <nav class="product-nav">
         <a href="../pages/about-us.html" class="nav-btn-link">Über uns</a>
         <a href="../pages/contact.html" class="nav-btn-link">Kontakt</a>
@@ -32,44 +37,21 @@
 <div id="accent-strip" class="accent-cosmic"></div>
 
 <main class="shop-container">
-    <section class="product-hero" style="display: block;">
-        <h1>Impressum</h1>
-        <p class="tagline">Offenlegung gemäß § 25 Mediengesetz / § 5 ECG.</p>
+    <section class="product-hero" style="display: block; padding: 2cm;">
+        <p class="tagline">Haben Sie Fragen?</p>
+        <h1>Kontaktieren Sie uns</h1>
 
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px;">
-            <div>
-                <h3>Unternehmensangaben</h3>
-                <p>
-                    <strong>Orbital Interactive GmbH</strong><br>
-                    Softwareentwicklung & Games<br>
-                    Universumstraße 42, 1200 Wien<br>
-                    Österreich
-                </p>
-                <p>
-                    <strong>Firmenbuchnummer:</strong> FN 123456 x<br>
-                    <strong>Firmenbuchgericht:</strong> Handelsgericht Wien<br>
-                    <strong>UID-Nummer:</strong> ATU78945612
-                </p>
-            </div>
-            <div>
-                <h3>Kontakt</h3>
-                <p>
-                    <strong>Telefon:</strong> +43 1 234 567 89<br>
-                    <strong>E-Mail:</strong> office@orbital-interactive.com
-                </p>
-                <h3>Mitgliedschaften</h3>
-                <p>Mitglied der Wirtschaftskammer Wien (WKW)<br>
-                    Fachgruppe: Unternehmensberatung, Buchhaltung und Informationstechnologie (UBIT)</p>
-            </div>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Ihre Nachricht wurde erfolgreich versendet!\n\n(dieser Vorgang ist nur gemocked,\nes wurde keine tatsächliche Nachricht versendet)');">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="E-Mail" required>
+            <textarea placeholder="Ihre Nachricht" rows="5" required></textarea>
+            <button type="submit" class="buy-button">Nachricht senden</button>
+        </form>
+
+        <div style="margin-top: 50px;">
+            <h3>Adresse</h3>
+            <p>Orbital Interactive GmbH<br>Universumstraße 42, 1200 Wien, Österreich</p>
         </div>
-
-        <hr style="border: 0; border-top: 1px solid #333; margin: 40px 0;">
-
-        <h3>Blattlinie</h3>
-        <p>Präsentation und Vertrieb von interaktiven Unterhaltungsmedien und Softwareprodukten im Bereich Rhythmus-Gaming.</p>
-
-        <h3>Online-Streitbeilegung</h3>
-        <p>Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten: <a href="http://ec.europa.eu/odr" target="_blank" style="color: var(--cosmic-pink);">http://ec.europa.eu/odr</a>. Sie können allfällige Beschwerde auch an die oben angegebene E-Mail-Adresse richten.</p>
     </section>
 </main>
 
@@ -83,7 +65,7 @@
                 <li><a href="license.html">Lizenz</a></li>
             </ul>
         </nav>
-        <p class="copyright">&copy; 2026 Orbital Interactive</p>
+        <p class="copyright">&copy; 2026 Orbital Interactive - Datenrecht Projekt</p>
     </div>
 </footer>
 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kasse | Orbital Interactive</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    .checkout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; margin-bottom: 8px; font-weight: bold; color: var(--text-muted); font-size: 0.9rem; }
+    .form-input, .form-select {
+      width: 100%; background: #1a1e26; border: 1px solid #333; color: white; padding: 12px; border-radius: 6px; font-family: inherit; box-sizing: border-box;
+    }
+    .form-input:focus { border-color: var(--cosmic-pink); outline: none; }
+
+    .order-summary {
+      background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px; border: 1px solid #333; h3 { margin-top: 0; color: var(--cosmic-pink); }
+    }
+    .summary-row { display: flex; justify-content: space-between; margin-bottom: 15px; }
+    .total-row { border-top: 1px solid #333; padding-top: 15px; font-weight: 900; font-size: 1.2rem; }
+
+    @media (max-width: 768px) { .checkout-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="main-banner">
+  <a href="../shop.html" class="logo-link">
+    <img src="../assets/OrbitalInteractive_logo.png" alt="Logo" class="header-logo">
+  </a>
+  <nav class="product-nav">
+    <a href="about-us.html" class="nav-btn-link">Über uns</a>
+    <a href="contact.html" class="nav-btn-link">Kontakt</a>
+    <div class="dropdown">
+      <button class="dropbtn">PRODUKTE ▾</button>
+      <div class="dropdown-content">
+        <a href="../shop.html#cosmic">Cosmic Swing</a>
+        <a href="../shop.html#galactic">Galactic Beats</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<div id="accent-strip" class="accent-cosmic"></div>
+
+<main class="shop-container">
+  <section class="product-hero" style="display: block; padding: 2cm;">
+    <h1>Kasse</h1>
+    <p class="tagline">Schließen Sie Ihre interstellare Bestellung ab.</p>
+
+    <form onsubmit="event.preventDefault(); alert('Vielen Dank! Ihre Bestellung wurde aufgenommen.\n\n(dieser Vorgang ist nur gemocked,\nes wurde keine tatsächliche Bestellung aufgenommen)'); window.location.href='../shop.html';">
+      <div class="checkout-grid">
+        <div>
+          <h3 style="color: var(--text-white);">Rechnungsdetails</h3>
+          <div class="form-group">
+            <label class="form-label">Vollständiger Name *</label>
+            <input type="text" class="form-input" required placeholder="Max Mustermann">
+          </div>
+          <div class="form-group">
+            <label class="form-label">E-Mail-Adresse *</label>
+            <input type="email" class="form-input" required placeholder="max@beispiel.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Adresse *</label>
+            <input type="text" class="form-input" required placeholder="Musterstraße 42">
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div class="form-group">
+              <label class="form-label">PLZ *</label>
+              <input type="text" class="form-input" required placeholder="1010">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Stadt *</label>
+              <input type="text" class="form-input" required placeholder="Wien">
+            </div>
+          </div>
+
+          <h3 style="color: var(--text-white); margin-top: 30px;">Zahlungsmethode (simuliert)</h3>
+          <div class="form-group" style="background: #1a1e26; padding: 15px; border-radius: 6px; border: 1px solid #333;">
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="radio" name="payment" checked> Kreditkarte (Visa/Mastercard)
+            </label>
+          </div>
+          <div class="form-group" style="background: #1a1e26; padding: 15px; border-radius: 6px; border: 1px solid #333;">
+            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+              <input type="radio" name="payment"> PayPal
+            </label>
+          </div>
+        </div>
+
+        <div>
+          <div class="order-summary">
+            <h3>Ihre Bestellung</h3>
+            <div class="summary-row">
+              <span>Produkt (Digitaler Download)</span>
+              <span>Preis</span>
+            </div>
+            <div class="summary-row" style="color: var(--text-muted);">
+              <span>1x Cosmic Swing / Galactic Beats</span>
+              <span>~ 19,99 €</span>
+            </div>
+            <div class="summary-row total-row">
+              <span>Gesamtsumme (inkl. MwSt.)</span>
+              <span style="color: var(--cosmic-pink);">~ 19,99 €</span>
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 20px;">
+              Mit Klick auf "Kostenpflichtig bestellen" akzeptieren Sie unsere <a href="license.html" style="color: var(--text-white);">AGB & Lizenzbedingungen</a> sowie die <a href="privacy.html" style="color: var(--text-white);">Datenschutzerklärung</a>.
+            </p>
+
+            <button type="submit" class="buy-button" style="width: 100%; margin-top: 20px;">Kostenpflichtig bestellen</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+<footer class="legal-footer">
+  <div class="footer-content">
+    <nav class="footer-nav">
+      <ul class="footer-links">
+        <li><a href="legal-notice.html">Impressum</a></li>
+        <li><a href="privacy.html">Datenschutzerklärung</a></li>
+        <li><a href="accessibility.html">Barrierefreiheit</a></li>
+        <li><a href="license.html">Lizenz</a></li>
+      </ul>
+    </nav>
+    <p class="copyright">&copy; 2026 Orbital Interactive</p>
+  </div>
+</footer>
+
+<div id="custom-cursor"></div>
+
+<div id="cookie-wrapper">
+  <div id="cookie-popup" class="cookie-card">
+    <h3>Cookie-Einstellungen</h3>
+    <p>Wir nutzen Cookies, um Ihr Erlebnis zu verbessern. Akzeptieren Sie die Nutzung?</p>
+    <div class="cookie-buttons">
+      <button onclick="acceptCookies()" class="cookie-btn-accept">Alle akzeptieren</button>
+      <button onclick="closeCookiePopup()" class="cookie-btn-minimal">Nur Notwendige</button>
+    </div>
+  </div>
+  <button id="cookie-icon-btn" onclick="toggleCookiePopup()" aria-label="Cookie Einstellungen">
+    <span class="gray-emoji">🍪</span>
+  </button>
+</div>
+
+<script src="../js/main.js"></script>
+</body>
+</html>
